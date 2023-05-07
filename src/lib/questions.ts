@@ -122,7 +122,7 @@ const questions: Question[] = [
     ],
   },
   {
-    question: "Какой цвет вы предпочитаете?",
+    question: "Какой цвет вам не нравиться?",
     answers: [
       { text: "Красный", parameters: { love: 7, personality: 4, physical: 5, } },
       { text: "Синий", parameters: { love: 3, personality: 8, physical: 2, } },
