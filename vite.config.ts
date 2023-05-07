@@ -18,6 +18,11 @@ export default defineConfig(({ mode }) => {
     ],
     build: {
       target: ['firefox78', 'chrome78'],
+      rollupOptions: {
+        output: {
+          assetFileNames: 'assets/[hash].[ext]'
+        }
+      },
     },
     base: './',
     mode: external ? mode.includes('external-dev') ? 'development' : 'production' : mode,

@@ -5,20 +5,20 @@
   const events = getEventsAction();
 
   type $$Props = HTMLButtonAttributes & {
-    sm?: boolean;
+    choice?: boolean;
   };
 
-  export let sm = false;
+  export let choice = false;
 </script>
 
-<button type="button" class="{$$restProps['disabled'] ? '' : 'glow'} {sm && 'small'}" {...$$restProps} use:events>
+<button type="button" class="{$$restProps['disabled'] ? '' : 'glow'} {choice && 'choice'}" {...$$restProps} use:events>
   <slot />
 </button>
 
 <style>
   button {
     padding: 0.8rem 1.6rem;
-    margin: 0.2rem 0;
+    margin: 0.3rem 0;
     
     font-size: 1.4rem;
     line-height: 2rem;
@@ -53,12 +53,20 @@
     }
   }
 
-  @media (max-width: 1023px) {
-    .small {
-      padding: 0.4rem 0.8rem;
-      margin: 0.2rem 0;
+  .choice {
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem 0;
+    
+    line-height: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .choice {
+      padding: 1.2rem 1.6rem;
+      margin: 0.4rem 0;
       
-      line-height: 1rem;
+      font-size: 2.5rem;
+      line-height: 2rem;
     }
   }
 

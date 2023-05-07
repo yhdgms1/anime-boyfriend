@@ -27,6 +27,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    background: url('../assets/neko.png') no-repeat bottom left;
   }
 
   h1 {

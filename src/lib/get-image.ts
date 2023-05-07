@@ -8,7 +8,7 @@ const entries = Object.entries(
 const images = entries.reduce((acc, [name, src]) => {
   const path = name.split('/');
 
-  acc[path[path.length - 1].split('.')[0]] = src;
+  acc[path[path.length - 1].split('.')[0]] = (new URL(src, document.location.href)).toString();
 
   return acc;
 }, {});

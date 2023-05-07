@@ -71,7 +71,7 @@
     <ul class="base">
       {#each question.answers as answer}
         <li>
-          <Button on:click={process(answer.parameters)} style="width: 100%;" sm>
+          <Button on:click={process(answer.parameters)} style="width: 100%;" choice>
             {answer.text}
           </Button>
         </li>
@@ -139,6 +139,8 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
+    text-shadow: -2px -1px 0 #9f86c0;
   }
 
   .head--boyfriend {
@@ -174,6 +176,8 @@
     padding-inline-end: 0.4rem;
     margin-block-start: 0;
     margin-block-end: 0;
+
+    width: 60vw;
   }
 
   ul > li {

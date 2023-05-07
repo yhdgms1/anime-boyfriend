@@ -108,7 +108,7 @@ const questions: Question[] = [
     answers: [
       { text: "Нож", parameters: { love: 2, personality: 6, physical: 8, } },
       { text: "Книга", parameters: { love: 5, personality: 8, physical: 1, } },
-      { text: "Матчи", parameters: { love: 1, personality: 4, physical: 5, } },
+      { text: "Еда", parameters: { love: 1, personality: 4, physical: 5, } },
       { text: "Вода", parameters: { love: 10, personality: 2, physical: 1, } },
     ],
   },
@@ -131,7 +131,7 @@ const questions: Question[] = [
     ],
   },
   {
-    question: "Какое ваше любимое время года?",
+    question: "Какое ваше нелюбимое время года?",
     answers: [
       { text: "Весна", parameters: { love: 7, personality: 5, physical: 3, } },
       { text: "Лето", parameters: { love: 3, personality: 8, physical: 7, } },
