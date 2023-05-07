@@ -114,21 +114,11 @@
   .question, .progress, .boyfriend {
     padding: 0 0.2rem;
     
-    font-size: 2.75rem;
-    line-height: 2.5rem;
+    font-size: 2.4rem;
+    line-height: 2.2rem;
 
     text-align: center;
   }
-
-  @media (min-width: 1024px) {
-    .question, .progress, .boyfriend {
-      font-size: 3rem;
-      line-height: 1;
-
-      max-width: 60vw;
-    }
-  }
-
   .question, .progress {
     user-select: none;
   }
@@ -177,10 +167,23 @@
     margin-block-start: 0;
     margin-block-end: 0;
 
-    width: 60vw;
+    width: 90vw;
   }
 
   ul > li {
     list-style-type: none;
+  }
+
+  @media (min-width: 1024px) {
+    .question, .progress, .boyfriend {
+      font-size: 3rem;
+      line-height: 1;
+
+      max-width: 60vw;
+    }
+
+    ul {
+      width: 60vw;
+    }
   }
 </style>
