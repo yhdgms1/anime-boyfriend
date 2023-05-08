@@ -68,7 +68,8 @@
       <span class="question">{question.question}</span>
     </div>
 
-    <ul class="base">
+  <div class="base">
+    <ul>
       {#each question.answers as answer}
         <li>
           <Button on:click={process(answer.parameters)} style="width: 100%;" choice>
@@ -77,14 +78,15 @@
         </li>
       {/each}
     </ul>
+  </div>
 
     <div class="bottom">
-      <Button disabled={index === 0} on:click={back}>
+      <Button disabled={index === 0} on:click={back} choice>
         Назад
       </Button>
     </div>
   {:else}
-    <div class="head head--boyfriend">
+    <div class="head">
       <span class="boyfriend">Ваш парень:</span>
       <span class="boyfriend">{boyfriend}</span>
     </div>
@@ -106,16 +108,16 @@
     width: 100%;
     height: 100vh;
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
 
   .question, .progress, .boyfriend {
     padding: 0 0.2rem;
     
-    font-size: 2.4rem;
-    line-height: 2.2rem;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
 
     text-align: center;
   }
@@ -124,7 +126,6 @@
   }
 
   .head {
-    height: 40vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -133,12 +134,7 @@
     text-shadow: -2px -1px 0 #9f86c0;
   }
 
-  .head--boyfriend {
-    height: 20vh;
-  }
-
   .bottom {
-    height: 20vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -148,12 +144,7 @@
   .base {
     display: flex;
     flex-direction: column;
-
-    height: 40vh;
-  }
-
-  .base--boyfriend {
-    height: 60vh;
+    align-items: center;
   }
 
   .base--boyfriend > img {
