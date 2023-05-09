@@ -35,18 +35,11 @@
   h1 {
     padding: 0 0.2rem;
     
-    font-size: 2.75rem;
-    line-height: 2.5rem;
+    font-size: var(--font-heading);
+    line-height: 1;
 
     text-align: center;
 
     text-shadow: -3px -2px 2px #9f86c0;
-  }
-
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 4.5rem;
-      line-height: 1;
-    }
   }
 </style>

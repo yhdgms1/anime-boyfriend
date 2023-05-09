@@ -18,10 +18,10 @@
 <style>
   button {
     padding: 0.8rem 1.6rem;
-    margin: 0.3rem 0;
+    margin-bottom: 0.3rem;
     
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: var(--font-base);
+    line-height: 1;
 
     text-align: center;
 
@@ -46,28 +46,9 @@
     outline: none;
   }
 
-  @media (min-width: 1024px) {
-    button {
-      font-size: 2rem;
-      line-height: 1;
-    }
-  }
-
   .choice {
     padding: 0.4rem 0.8rem;
-    margin: 0.2rem 0;
-    
-    line-height: 1rem;
-  }
-
-  @media (min-width: 1024px) {
-    .choice {
-      padding: 1.2rem 1.6rem;
-      margin: 0.4rem 0;
-      
-      font-size: 2.5rem;
-      line-height: 2rem;
-    }
+    margin-bottom: 0.2rem;
   }
 
   .glow::before {

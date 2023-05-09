@@ -116,8 +116,8 @@
   .question, .progress, .boyfriend {
     padding: 0 0.2rem;
     
-    font-size: 1.6rem;
-    line-height: 1.6rem;
+    font-size: var(--font-heading);
+    line-height: 1;
 
     text-align: center;
   }
@@ -148,7 +148,7 @@
   }
 
   .base--boyfriend > img {
-    max-height: 60vh;
+    max-height: 55vh;
     max-width: 80vw;
   }
 
@@ -167,9 +167,6 @@
 
   @media (min-width: 1024px) {
     .question, .progress, .boyfriend {
-      font-size: 3rem;
-      line-height: 1;
-
       max-width: 60vw;
     }
 
