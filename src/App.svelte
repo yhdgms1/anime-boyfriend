@@ -17,8 +17,8 @@
 
 <style>
   :global(body) {
-    --font-base: min(calc(.2vw + .2vh + 3.5vmin + 0.5vmax), 3rem);
-    --font-heading: min(calc(2vw + 2vh + 1vmin), 5rem);
+    --font-base: calc(.2vw + .2vh + 3.5vmin + 0.5vmax);
+    --font-heading: calc(2vw + 2vh + 1vmin);
   }
 
   main {

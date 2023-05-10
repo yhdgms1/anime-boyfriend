@@ -174,4 +174,19 @@
       width: 60vw;
     }
   }
+
+  @media (min-aspect-ratio: 5.9) {
+    .root {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .base {
+      justify-content: center;
+    }
+
+    .question, .progress, .boyfriend {
+      font-size: var(--font-base);
+    }
+  }
 </style>
