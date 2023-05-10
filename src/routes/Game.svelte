@@ -48,7 +48,7 @@
   }
 
   const reset = () => {
-    for (const [key, value] of Object.entries(current_step)) {
+    for (const key of Object.keys(current_step)) {
       params[key] = 0;
       current_step[key] = 0;
     }
