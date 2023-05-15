@@ -13,7 +13,7 @@
   let params: Answer['parameters'] = {
     love: 0,
     personality: 0,
-    physical: 0,
+    
   };
 
   /**
@@ -22,7 +22,7 @@
   let current_step: Answer['parameters'] = {
     love: 0,
     personality: 0,
-    physical: 0,
+    
   };
 
   const process = (parameters: Answer['parameters']) => {
