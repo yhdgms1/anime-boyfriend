@@ -138,6 +138,42 @@ const questions: Question[] = [
       { text: "Электромобиль", parameters: { love: 7, personality: 9, } },
     ],
   },
+  {
+    question: "Какой ваш любимый вид спорта?",
+    answers: [
+      { text: "Футбол", parameters: { love: 3, personality: 6, } },
+      { text: "Баскетбол", parameters: { love: 5, personality: 7, } },
+      { text: "Теннис", parameters: { love: 7, personality: 3, } },
+      { text: "Плавание", parameters: { love: 10, personality: 8, } },
+    ],
+  },
+  {
+    question: "Какой ваш любимый вид активности на свежем воздухе?",
+    answers: [
+      { text: "Прогулка в парке", parameters: { love: 6, personality: 8, } },
+      { text: "Пикник", parameters: { love: 3, personality: 5, } },
+      { text: "Кемпинг", parameters: { love: 7, personality: 4, } },
+      { text: "Занятия спортом", parameters: { love: 5, personality: 7, } },
+    ],
+  },
+  {
+    question: "Какую обстановку вы предпочитаете в отношениях?",
+    answers: [
+      { text: "Романтику и внимание", parameters: { love: 10, personality: 5, } },
+      { text: "Свободу и независимость", parameters: { love: 3, personality: 9, } },
+      { text: "Взаимную поддержку и понимание", parameters: { love: 8, personality: 6, } },
+      { text: "Активность и новые впечатления", parameters: { love: 5, personality: 7, } },
+    ],
+  },
+  {
+    question: "Как вы относитесь к животным?",
+    answers: [
+      { text: "Обожаю животных", parameters: { love: 10, personality: 7, } },
+      { text: "Люблю, но не могу жить с ними", parameters: { love: 3, personality: 5, } },
+      { text: "Боюсь животных", parameters: { love: 1, personality: 2, } },
+      { text: "Нейтральное отношение", parameters: { love: 5, personality: 6, } },
+    ],
+  },
 ]
 
 export { questions }

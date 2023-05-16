@@ -64,8 +64,8 @@
     {@const question = questions[index]}
 
     <div class="head">
-      <span class="progress">{index} / {questions.length}</span>
-      <span class="question">{question.question}</span>
+      <span class="progress noselect">{index} / {questions.length}</span>
+      <span class="question noselect">{question.question}</span>
     </div>
 
   <div class="base">
@@ -87,8 +87,8 @@
     </div>
   {:else}
     <div class="head">
-      <span class="boyfriend">Ваш парень:</span>
-      <span class="boyfriend">{boyfriend}</span>
+      <span class="boyfriend noselect">Ваш парень:</span>
+      <span class="boyfriend noselect">{boyfriend}</span>
     </div>
 
     <div class="base base--boyfriend">
@@ -120,9 +120,6 @@
     line-height: 1;
 
     text-align: center;
-  }
-  .question, .progress {
-    user-select: none;
   }
 
   .head {

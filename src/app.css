@@ -13,8 +13,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
 
-  /* @see https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+/* @see https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+.noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */

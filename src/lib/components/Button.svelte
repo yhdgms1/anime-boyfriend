@@ -11,7 +11,7 @@
   export let choice = false;
 </script>
 
-<button type="button" class="{$$restProps['disabled'] ? '' : 'glow'} {choice && 'choice'}" {...$$restProps} use:events>
+<button type="button" class="{$$restProps['disabled'] ? '' : 'glow'} {choice && 'choice'} noselect" {...$$restProps} use:events>
   <slot />
 </button>
 
@@ -31,7 +31,6 @@
     background: #38a3a5;
     border: 3px solid white;
 
-    user-select: none;
     cursor: pointer;
 
     color: white;
