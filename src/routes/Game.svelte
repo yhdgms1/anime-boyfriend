@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
   import type { Answer } from '../lib/questions';
 
+  import { getSDK } from '../lib/SDK';
   import { Button } from '../lib/components';
   import { findBestBoyfriend } from '../lib/find';
   import { questions } from '../lib/questions';
@@ -8,7 +9,9 @@
 </script>
 
 <script lang="ts">
-  let index = 0;
+  const sdk = getSDK();
+
+  let index = 95;
 
   let params: Answer['parameters'] = {
     love: 0,
@@ -27,6 +30,15 @@
 
   const process = (parameters: Answer['parameters']) => {
     return () => {
+      if (index === 99) {
+        sdk.sdk.adv.showFullscreenAdv({
+          callbacks: {
+            onClose() {},
+            onError() {}
+          }
+        });
+      }
+
       for (const [key, value] of Object.entries(parameters)) {
         params[key] += value;
         current_step[key] = value;
@@ -66,13 +78,17 @@
     <div class="head">
       <span class="progress noselect">{index} / {questions.length}</span>
       <span class="question noselect">{question.question}</span>
+
+      {#if index === 99}
+        <span class="adv noselect">Узнаете парня после рекламы</span>
+      {/if}
     </div>
 
   <div class="base">
     <ul>
       {#each question.answers as answer}
         <li>
-          <Button on:click={process(answer.parameters)} style="width: 100%;" choice>
+          <Button on:click={process(answer.parameters)} style="width: 100%;" choice h-full>
             {answer.text}
           </Button>
         </li>
@@ -113,7 +129,7 @@
     grid-template-rows: 1fr 1fr 1fr;
   }
 
-  .question, .progress, .boyfriend {
+  .question, .progress, .boyfriend, .adv {
     padding: 0 0.2rem;
     
     font-size: var(--font-heading);
@@ -135,7 +151,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .base {
@@ -156,6 +172,10 @@
     margin-block-end: 0;
 
     width: 90vw;
+    height: 100%;
+
+    display: grid;
+    gap: 0.2rem;
   }
 
   ul > li {
@@ -163,7 +183,7 @@
   }
 
   @media (min-width: 1024px) {
-    .question, .progress, .boyfriend {
+    .question, .progress, .boyfriend, .adv {
       max-width: 60vw;
     }
 
@@ -172,7 +192,7 @@
     }
   }
 
-  @media (min-aspect-ratio: 5.9) {
+  @media (min-aspect-ratio: 3.5) {
     .root {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;
@@ -182,8 +202,13 @@
       justify-content: center;
     }
 
-    .question, .progress, .boyfriend {
+    .question, .progress, .boyfriend, .adv {
       font-size: var(--font-base);
+    }
+
+    .bottom {
+      align-items: flex-end;
+      justify-content: center;
     }
   }
 </style>

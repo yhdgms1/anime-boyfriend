@@ -6,12 +6,21 @@
 
   type $$Props = HTMLButtonAttributes & {
     choice?: boolean;
+    "h-full"?: boolean;
   };
 
   export let choice = false;
 </script>
 
-<button type="button" class="{$$restProps['disabled'] ? '' : 'glow'} {choice && 'choice'} noselect" {...$$restProps} use:events>
+<button 
+  type="button"
+  class:glow={!$$restProps.disabled}
+  class:choice={choice}
+  class:h-full={$$restProps['h-full']}
+  class:noselect={true}
+  {...$$restProps} 
+  use:events
+>
   <slot />
 </button>
 
@@ -48,6 +57,11 @@
   .choice {
     padding: 0.4rem 0.8rem;
     margin-bottom: 0.2rem;
+  }
+
+  .h-full {
+    height: 100%;
+    margin-bottom: 0;
   }
 
   .glow::before {

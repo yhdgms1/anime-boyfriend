@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 /* @see https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

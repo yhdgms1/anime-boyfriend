@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       svelte(),
-      ssl(),
+      !external && ssl(),
       {
         name: 'html-postprocess',
         transformIndexHtml(html) {

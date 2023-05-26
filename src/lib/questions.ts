@@ -48,7 +48,5 @@ const mutateInto = (...items: ({ q: string; a: string[] })[]) => {
 
 const questions: Question[] = mutateInto(...parse(questionsText));
 
-for (const q of questions) for (const a of q.answers) console.log(a.parameters);
-
 export { questions }
 export type { Question, Answer }

@@ -1,4 +1,6 @@
 <script context="module" lang="ts">
+  import SDKProvider from './lib/SDK/Provider.svelte';
+
   import Home from './routes/Home.svelte';
   import Game from './routes/Game.svelte';
 </script>
@@ -8,11 +10,13 @@
 </script>
 
 <main>
-  {#if $route === 'home'}
-    <Home />
-  {:else if $route === 'game'}
-    <Game />
-  {/if}
+  <SDKProvider>
+    {#if $route === 'home'}
+      <Home />
+    {:else if $route === 'game'}
+      <Game />
+    {/if}
+  </SDKProvider>
 </main>
 
 <style>
