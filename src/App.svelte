@@ -10,13 +10,13 @@
 </script>
 
 <main>
-  <SDKProvider>
-    {#if $route === 'home'}
-      <Home />
-    {:else if $route === 'game'}
+  {#if $route === 'home'}
+    <Home />
+  {:else if $route === 'game'}
+    <SDKProvider>
       <Game />
-    {/if}
-  </SDKProvider>
+    </SDKProvider>
+  {/if}
 </main>
 
 <style>

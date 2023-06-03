@@ -11,7 +11,7 @@
 <script lang="ts">
   const sdk = getSDK();
 
-  let index = 95;
+  let index = 0;
 
   let params: Answer['parameters'] = {
     love: 0,
