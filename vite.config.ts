@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
       {
         name: 'html-postprocess',
         transformIndexHtml(html) {
-          return html.replace('{{sdk}}', external ? '' : '<script src="https://yandex.ru/games/sdk/v2"></script>')
+          return html.replace('{{head}}', external ? '<link rel="canonical" href="https://yandex.ru/games/app/222835?lang=ru" />' : '<script src="https://yandex.ru/games/sdk/v2"></script>')
         }
       }
     ],
