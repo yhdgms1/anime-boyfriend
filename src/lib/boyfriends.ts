@@ -34,6 +34,15 @@ const animeBoyfriends: AnimeBoyfriend[] = [
   { name: "Рицука Уэнояма", love: 8, personality: 7, },
   { name: "Хатори Сома", love: 9, personality: 6, },
   { name: "Тандзиро Камадо", love: 7, personality: 8, },
+  { name: "Ханзо Урушихара", love: 2, personality: 9 },
+  { name: "Сиро Инукай", love: 7, personality: 4 },
+  { name: "Акселератор", love: 4, personality: 2 },
+  { name: "Масато Кагэура", love: 9, personality: 2 },
+  { name: "Локи Лаватейн", love: 7, personality: 9 },
+  { name: "Сэнку Исигами", love: 4, personality: 2 },
+  { name: "Микаэла Хякуя", love: 2, personality: 6 },
+  { name: "Тораноскэ Миямура", love: 5, personality: 5 },
+  { name: "Лаксус Дрейар", love: 3, personality: 2 }
 ];
 
 export { animeBoyfriends }
