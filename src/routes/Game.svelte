@@ -89,7 +89,7 @@
     <ul>
       {#each question.answers as answer}
         <li>
-          <Button action={enterClickOnce} on:click={process(answer.parameters)} style="width: 100%; padding: clamp(0.2rem, 1rem, 2rem);" choice h-full>
+          <Button action={enterClickOnce} on:click={process(answer.parameters)} style="width: 100%; padding: calc(var(--unit) * 2);" choice h-full>
             {answer.text}
           </Button>
         </li>
@@ -124,7 +124,6 @@
   .root {
     width: 100%;
     height: 100vh;
-    height: 100svh;
 
     display: grid;
     align-items: stretch;
@@ -223,6 +222,19 @@
     .bottom {
       align-items: flex-end;
       justify-content: center;
+    }
+  }
+
+  @media only screen and (orientation: landscape) and (pointer: coarse) {
+    ul {
+      display: grid;
+      align-items: stretch;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .head {
+      min-height: unset;
     }
   }
 </style>
