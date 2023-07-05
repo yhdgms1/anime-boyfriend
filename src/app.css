@@ -9,3 +9,10 @@
   /* prettier-ignore */
   src: url("./assets/fonts/russo-one-v14-cyrillic_latin-regular.woff2") format("woff2"), url("./assets/fonts/russo-one-v14-cyrillic_latin-regular.woff") format("woff");
 }
+
+body {
+  --font-base: calc(.2vw + .2vh + 3.5vmin + 0.5vmax);
+  --font-heading: calc(2vw + 2vh + 1vmin);
+
+  --unit: calc(.3vmin + .3vmax);
+}

@@ -22,11 +22,6 @@
 </main>
 
 <style>
-  :global(body) {
-    --font-base: calc(.2vw + .2vh + 3.5vmin + 0.5vmax);
-    --font-heading: calc(2vw + 2vh + 1vmin);
-  }
-
   main {
     width: 100%;
     height: 100vh;

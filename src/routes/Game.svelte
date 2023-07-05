@@ -89,7 +89,7 @@
     <ul>
       {#each question.answers as answer}
         <li>
-          <Button action={enterClickOnce} on:click={process(answer.parameters)} style="width: 100%;" choice h-full>
+          <Button action={enterClickOnce} on:click={process(answer.parameters)} style="width: 100%; padding: clamp(0.2rem, 1rem, 2rem);" choice h-full>
             {answer.text}
           </Button>
         </li>
@@ -124,10 +124,18 @@
   .root {
     width: 100%;
     height: 100vh;
+    height: 100svh;
 
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+    justify-items: center;
+
+    grid-template-rows: auto 1fr auto;
+
+    gap: calc(var(--unit) * 2);
+    padding: calc(var(--unit));
   }
 
   .question, .progress, .boyfriend, .adv {
@@ -144,6 +152,8 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    min-height: 20vh;
     
     text-shadow: -2px -1px 0 #9f86c0;
   }
@@ -176,7 +186,10 @@
     height: 100%;
 
     display: grid;
-    gap: 0.2rem;
+    align-items: center;
+    align-content: center;
+
+    gap: var(--unit);
   }
 
   ul > li {

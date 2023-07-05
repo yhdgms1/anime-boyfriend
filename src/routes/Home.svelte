@@ -11,7 +11,7 @@
 </script>
 
 <div class="root">
-  <h1 class="noselect">Твой аниме парень</h1>
+  <h1 class="noselect">Твой Аниме Парень</h1>
 
   <Button on:click={play}>
     Играть
