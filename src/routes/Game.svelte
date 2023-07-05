@@ -1,22 +1,20 @@
 <script context="module" lang="ts">
-  import type { Answer } from '../lib/questions';
+  import type { Answer } from '../lib';
 
-  import { getSDK } from '../lib/SDK';
+  import { useGames } from 'svelte-yagames';
+  import { image, enterClickOnce } from 'svelte-yagames/actions';
   import { Button } from '../lib/components';
-  import { findBestBoyfriend } from '../lib/find';
-  import { questions } from '../lib/questions';
-  import { getImage } from '../lib/get-image';
+  import { findBestBoyfriend, questions, getImage } from '../lib';
 </script>
 
 <script lang="ts">
-  const sdk = getSDK();
+  const games = useGames();
 
   let index = 0;
 
   let params: Answer['parameters'] = {
     love: 0,
     personality: 0,
-    
   };
 
   /**
@@ -25,13 +23,12 @@
   let current_step: Answer['parameters'] = {
     love: 0,
     personality: 0,
-    
   };
 
   const process = (parameters: Answer['parameters']) => {
     return () => {
-      if (index === 99) {
-        sdk.sdk.adv.showFullscreenAdv({
+      if (index === 99 || index === 33) {
+        games.sdk.adv.showFullscreenAdv({
           callbacks: {
             onClose() {},
             onError() {}
@@ -79,6 +76,10 @@
       <span class="progress noselect">{index} / {questions.length}</span>
       <span class="question noselect">{question.question}</span>
 
+      {#if index === 33}
+        <span class="adv noselect">Продолжить можно после просмотра рекламы</span>
+      {/if}
+
       {#if index === 99}
         <span class="adv noselect">Узнаете парня после рекламы</span>
       {/if}
@@ -88,7 +89,7 @@
     <ul>
       {#each question.answers as answer}
         <li>
-          <Button on:click={process(answer.parameters)} style="width: 100%;" choice h-full>
+          <Button action={enterClickOnce} on:click={process(answer.parameters)} style="width: 100%;" choice h-full>
             {answer.text}
           </Button>
         </li>
@@ -97,7 +98,7 @@
   </div>
 
     <div class="bottom">
-      <Button disabled={index === 0} on:click={back} choice>
+      <Button action={enterClickOnce} disabled={index === 0} on:click={back} choice>
         Назад
       </Button>
     </div>
@@ -108,11 +109,11 @@
     </div>
 
     <div class="base base--boyfriend">
-      <img draggable="false" on:dragstart={(e) => (e.preventDefault(), false)} src={getImage(boyfriend)} alt={boyfriend} />
+      <img use:image src={getImage(boyfriend)} alt={boyfriend} />
     </div>
 
     <div class="bottom">
-      <Button on:click={reset}>
+      <Button action={enterClickOnce} on:click={reset}>
         Начать сначала
       </Button>
     </div>

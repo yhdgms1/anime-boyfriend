@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import SDKProvider from './lib/SDK/Provider.svelte';
+  import { GamesProvider } from 'svelte-yagames';
 
   import Home from './routes/Home.svelte';
   import Game from './routes/Game.svelte';
@@ -13,9 +13,11 @@
   {#if $route === 'home'}
     <Home />
   {:else if $route === 'game'}
-    <SDKProvider>
+    <GamesProvider
+      storage={{ key: 'anime-boyfriend' }}
+    >
       <Game />
-    </SDKProvider>
+    </GamesProvider>
   {/if}
 </main>
 

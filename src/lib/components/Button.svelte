@@ -1,14 +1,16 @@
 <script lang="ts">
   import type { HTMLButtonAttributes } from 'svelte/elements';
-  import { getEventsAction } from '../../lib/events-action';
+  import { getEventsAction } from 'svelte-yagames/actions';
 
   const events = getEventsAction();
 
   type $$Props = HTMLButtonAttributes & {
     choice?: boolean;
     "h-full"?: boolean;
+    action?: (element: HTMLElement) => void;
   };
 
+  export let action = (_) => {};
   export let choice = false;
 </script>
 
@@ -20,6 +22,7 @@
   class:noselect={true}
   {...$$restProps} 
   use:events
+  use:action
 >
   <slot />
 </button>

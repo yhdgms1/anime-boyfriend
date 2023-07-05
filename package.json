@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "_": "npm run dev:external",
     "dev": "vite",
     "dev:external": "vite --mode external",
     "build": "vite build",
@@ -11,17 +12,26 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.2.0",
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
-    "svelte": "^3.59.0",
-    "svelte-check": "^2.10.3",
-    "tslib": "^2.5.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.5"
+    "postcss": "^8.4.24",
+    "svelte": "^4.0.4",
+    "svelte-check": "^3.4.4",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.3.9"
   },
   "dependencies": {
     "@vitejs/plugin-basic-ssl": "^1.0.1",
-    "normalize.css": "^8.0.1"
+    "modern-normalize": "^2.0.0",
+    "svelte-yagames": "^0.2.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "typescript": "5",
+        "svelte": "4"
+      }
+    }
   }
 }

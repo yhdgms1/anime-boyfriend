@@ -1,4 +1,5 @@
-@import "normalize.css";
+@import "modern-normalize";
+@import "svelte-yagames/reset.css";
 
 @font-face {
   font-display: swap;
@@ -8,26 +9,3 @@
   /* prettier-ignore */
   src: url("./assets/fonts/russo-one-v14-cyrillic_latin-regular.woff2") format("woff2"), url("./assets/fonts/russo-one-v14-cyrillic_latin-regular.woff") format("woff");
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  overflow: hidden;
-}
-
-/* @see https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-}
-
-.noselect::selection { background: transparent; } 
-.noselect::-moz-selection { background: transparent; }
